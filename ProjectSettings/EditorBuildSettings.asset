@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: cb0ce59cd9f4e314f97b535eedadb3b0
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: b0889c42976720e40bf5fd372d1ee51c
+  - enabled: 1
+    path: Assets/Scenes/SlotScene.unity
+    guid: 395d3f99a95ef8f4b92f4a7639e7cd97
+  - enabled: 1
+    path: Assets/Scenes/MakeRamenScene.unity
+    guid: ef68aaa7c576c894a8b3e65175486dc4
+  - enabled: 1
+    path: Assets/Scenes/BuzzUpScene.unity
+    guid: 38682168bafa6434e9e145f75a734108
+  - enabled: 1
+    path: Assets/Scenes/RamenListScene.unity
+    guid: 685e83dfdd07f994086b37966f479526
+  - enabled: 1
+    path: Assets/Scenes/ItemListToppingScene.unity
+    guid: dd87283a06896574eaeedc1d43ac1108
+  - enabled: 1
+    path: Assets/Scenes/ItemListMenScene.unity
+    guid: dce82fb685d9b304a8724a68f80b61d1
+  - enabled: 1
+    path: Assets/Scenes/ItemListUtuwaScene.unity
+    guid: 9c42d71c68ca78248ab619f811733e9d
+  - enabled: 1
+    path: Assets/Scenes/ItemListSoupScene.unity
+    guid: 1d192f775b10f1a4db289c8ce23fc1c3
+  m_configObjects: {}
