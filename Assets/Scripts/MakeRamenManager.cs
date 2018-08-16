@@ -59,6 +59,8 @@ public class MakeRamenManager : MonoBehaviour {
     private List<string[]> csvDatas = new List<string[]>(); // CSVの中身を入れるリスト
     private int height = 0; // CSVの行数
 
+    public Text text;
+
     // Use this for initialization
     void Start () {
 
@@ -167,8 +169,50 @@ public class MakeRamenManager : MonoBehaviour {
             csvDatas.Add(line.Split(',')); // リストに入れる
             height++; // 行数加算
         }
-        Debug.Log(csvDatas[0][0]);
+        Debug.Log("csv:"+csvDatas[0][0]);
 
+        //********** 保存機能検証 **********//
+        //保存キーで入力文字を保存
+        PlayerPrefs.SetInt("KeyTestInt", 1);
+        PlayerPrefs.Save();
+
+        Debug.Log("IntSave:"+PlayerPrefs.GetInt("KeyTest"));
+
+        //てきとうにリストとディクショナリー作成
+        List<string> saveList = new List<string>() { "key1-1Key2-1", "key1-2key2-2", "key1-3key2-3" };
+        Dictionary<string, string> saveDict = new Dictionary<string, string>(){
+            {"key1", "1"}, {"key2", "2"}, {"key3", "3"}
+        };
+
+        //保存
+        PlayerPrefsUtility.SaveList<string>("ListSaveKey", saveList);
+        PlayerPrefsUtility.SaveDict<string, string>("DictSaveKey", saveDict);
+
+        //読み込み
+        List<string> loadList = PlayerPrefsUtility.LoadList<string>("ListSaveKey");
+        Dictionary<string, string> loadDict = PlayerPrefsUtility.LoadDict<string, string>("DictSaveKey");
+        for (int i = 0; i < loadList.Count; i++)
+        {
+            Debug.Log("ListSave:"+loadList[i]);
+        }
+
+        //var list = new List<KeyValuePair<string, string>>(loadDict);
+        // ループ変数にKeyValuePairを使う
+        foreach (KeyValuePair<string, string> kvp in loadDict)
+        {
+            string id = kvp.Key;
+            string name = kvp.Value;
+            Debug.Log(id+":"+name);
+        }
+
+        //var kList = new List<string>(loadDict.Keys);
+        //var vList = new List<string>(loadDict.Values);
+
+        //for (int i = 0; i < kList.Count; i++)
+        //{
+        //    Debug.Log("DictionaryKey:" + kList[i]);
+        //    Debug.Log("DictionaryKey2:" + vList[i]);
+        //}
     }
 
     // Update is called once per frame
@@ -182,9 +226,6 @@ public class MakeRamenManager : MonoBehaviour {
         Debug.Log(no);
 
     }
-
-
-
 
 
     //実行ボタン押下
